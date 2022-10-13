@@ -5,7 +5,15 @@ void main() {
     home: Scaffold(
       appBar: AppBar(title: const Text("你好Flutter")),
       body: Column(
-        children: const [MyApp(), MyButton(), MyText()],
+        children: const [
+          MyApp(),
+          MyButton(),
+          MyText(),
+          SizedBox(height: 20),
+          Circular(),
+          // ClipImage(),
+          // LocalImage()
+        ],
       ),
     ),
   ));
@@ -84,6 +92,61 @@ class MyText extends StatelessWidget {
           decorationColor: Colors.black,
           decorationStyle: TextDecorationStyle.dashed,
         ),
+      ),
+    );
+  }
+}
+
+class Circular extends StatelessWidget {
+  const Circular({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 150,
+      height: 150,
+      decoration: BoxDecoration(
+          color: Colors.yellow,
+          borderRadius: BorderRadius.circular(75),
+          image: const DecorationImage(
+            image: NetworkImage(
+                "https://feng-1257981287.cos.ap-chengdu.myqcloud.com/uPic/z78vVm.jpg"),
+            fit: BoxFit.cover,
+          )),
+    );
+  }
+}
+
+class ClipImage extends StatelessWidget {
+  const ClipImage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ClipOval(
+      child: Image.network(
+        "https://feng-1257981287.cos.ap-chengdu.myqcloud.com/uPic/z78vVm.jpg",
+        width: 150,
+        height: 150,
+        fit: BoxFit.cover,
+      ),
+    );
+  }
+}
+
+class LocalImage extends StatelessWidget {
+  const LocalImage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 150,
+      height: 150,
+      decoration: const BoxDecoration(
+        color: Colors.yellow,
+      ),
+      child: Image.asset(
+        "images/pascal-debrunner-DXcIb5pmMEg.jpg",
+        fit: BoxFit.cover,
       ),
     );
   }
