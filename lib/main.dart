@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './nfengFont.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -8,9 +9,14 @@ void main() {
         children: const [
           MyApp(),
           MyButton(),
-          MyText(),
+          // MyText(),
           SizedBox(height: 20),
           Circular(),
+          Icon(
+            NfengIcon.weixin,
+            size: 40,
+            color: Colors.orange,
+          )
           // ClipImage(),
           // LocalImage()
         ],
