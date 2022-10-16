@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter01/res/listData.dart';
+import './res/listData.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,18 +24,46 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
 
+  Widget _initGridViewData(context, index) {
+    return Container(
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: Colors.black26,
+        ),
+      ),
+      child: Column(
+        children: [
+          Image.network(listData[index]["imageUrl"]),
+          const SizedBox(height: 10),
+          Text(
+            listData[index]["title"],
+            style: const TextStyle(fontSize: 18),
+          )
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+    // return GridView.count(
+    //   padding: const EdgeInsets.all(10),
+    //   crossAxisSpacing: 10,
+    //   mainAxisSpacing: 10,
+    //   crossAxisCount: 2,
+    //   childAspectRatio: 1,
+    //   children: _initGridViewData(),
+    // );
+    return GridView.builder(
+      padding: const EdgeInsets.all(10),
       itemCount: listData.length,
-      itemBuilder: (context, i) {
-        print(listData[i]);
-        return ListTile(
-          leading: Image.network(listData[i]["imageUrl"]),
-          title: Text(listData[i]["title"]),
-          subtitle: Text(listData[i]["author"]),
-        );
-      },
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 10,
+        crossAxisCount: 2,
+        childAspectRatio: 1,
+      ),
+      itemBuilder: _initGridViewData,
     );
   }
 }
