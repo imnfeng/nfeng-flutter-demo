@@ -15,8 +15,72 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(title: const Text("Flutter ICON")),
-        body: const MyHomePage(),
+        body: const HomePage(),
       ),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      children: [
+        Container(
+          width: double.infinity,
+          height: 200,
+          color: Colors.black,
+        ),
+        Row(
+          children: [
+            Expanded(
+              flex: 2,
+              child: SizedBox(
+                height: 180,
+                child: Image.network(
+                  "https://feng-1257981287.cos.ap-chengdu.myqcloud.com/uPic/z78vVm.jpg",
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            Expanded(
+              flex: 1,
+              child: SizedBox(
+                height: 180,
+                child: Column(
+                  children: [
+                    Expanded(
+                      flex: 1,
+                      child: SizedBox(
+                        width: double.infinity,
+                        child: Image.network(
+                          "https://feng-1257981287.cos.ap-chengdu.myqcloud.com/uPic/z78vVm.jpg",
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    Expanded(
+                      flex: 2,
+                      child: SizedBox(
+                        width: double.infinity,
+                        child: Image.network(
+                          "https://feng-1257981287.cos.ap-chengdu.myqcloud.com/uPic/z78vVm.jpg",
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            )
+          ],
+        )
+      ],
     );
   }
 }
@@ -54,16 +118,32 @@ class MyHomePage extends StatelessWidget {
     //   childAspectRatio: 1,
     //   children: _initGridViewData(),
     // );
-    return GridView.builder(
-      padding: const EdgeInsets.all(10),
-      itemCount: listData.length,
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisSpacing: 10,
-        mainAxisSpacing: 10,
-        crossAxisCount: 2,
-        childAspectRatio: 1,
-      ),
-      itemBuilder: _initGridViewData,
+
+    // return GridView.builder(
+    //   padding: const EdgeInsets.all(10),
+    //   itemCount: listData.length,
+    //   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+    //     crossAxisSpacing: 10,
+    //     mainAxisSpacing: 10,
+    //     crossAxisCount: 2,
+    //     childAspectRatio: 1,
+    //   ),
+    //   itemBuilder: _initGridViewData,
+    // );
+
+    return Row(
+      children: [
+        Expanded(
+          flex: 1,
+          child: IconContainer(
+            Icons.home,
+          ),
+        ),
+        IconContainer(
+          Icons.ac_unit_sharp,
+          color: Colors.orange,
+        ),
+      ],
     );
   }
 }
@@ -75,8 +155,8 @@ class MyButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      width: 200,
-      height: 40,
+      width: 100,
+      height: 100,
       margin: const EdgeInsets.fromLTRB(0, 40, 0, 0),
       decoration: BoxDecoration(
         color: Colors.blue,
@@ -170,6 +250,27 @@ class LocalImage extends StatelessWidget {
       child: Image.asset(
         "images/pascal-debrunner-DXcIb5pmMEg.jpg",
         fit: BoxFit.cover,
+      ),
+    );
+  }
+}
+
+class IconContainer extends StatelessWidget {
+  Color color;
+  IconData icon;
+  IconContainer(this.icon, {super.key, this.color = Colors.red});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      alignment: Alignment.center,
+      height: 80,
+      width: 80,
+      color: color,
+      child: Icon(
+        icon,
+        color: Colors.white,
+        size: 28,
       ),
     );
   }
