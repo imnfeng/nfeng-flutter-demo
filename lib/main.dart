@@ -26,60 +26,128 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
+    final size = MediaQuery.of(context).size;
+
+    return Stack(
       children: [
-        Container(
-          width: double.infinity,
-          height: 200,
-          color: Colors.black,
-        ),
-        Row(
-          children: [
-            Expanded(
-              flex: 2,
-              child: SizedBox(
-                height: 180,
-                child: Image.network(
-                  "https://feng-1257981287.cos.ap-chengdu.myqcloud.com/uPic/z78vVm.jpg",
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-            Expanded(
-              flex: 1,
-              child: SizedBox(
-                height: 180,
-                child: Column(
-                  children: [
-                    Expanded(
-                      flex: 1,
-                      child: SizedBox(
-                        width: double.infinity,
-                        child: Image.network(
-                          "https://feng-1257981287.cos.ap-chengdu.myqcloud.com/uPic/z78vVm.jpg",
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 5,
-                    ),
-                    Expanded(
-                      flex: 2,
-                      child: SizedBox(
-                        width: double.infinity,
-                        child: Image.network(
-                          "https://feng-1257981287.cos.ap-chengdu.myqcloud.com/uPic/z78vVm.jpg",
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            )
+        ListView(
+          padding: const EdgeInsets.only(top: 50),
+          children: const [
+            ListTile(title: Text("我是一个列表1")),
+            ListTile(title: Text("我是一个列表2")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
+            ListTile(title: Text("我是一个列表")),
           ],
-        )
+        ),
+        Positioned(
+          left: 0,
+          top: 0,
+          width: size.width,
+          height: 44,
+          child: Row(
+            children: [
+              Expanded(
+                child: Container(
+                  alignment: Alignment.center,
+                  height: 44,
+                  color: Colors.black,
+                  child: const Text(
+                    "二级导航",
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ),
+        ),
+        // Container(
+        //   height: 400,
+        //   width: 300,
+        //   color: Colors.red,
+        //   child: Stack(
+        //     children: [
+        //       Positioned(
+        //         left: 10,
+        //         bottom: 10,
+        //         child: Container(
+        //           height: 100,
+        //           width: 100,
+        //           color: Colors.yellow,
+        //         ),
+        //       ),
+        //       const Positioned(
+        //         right: 0,
+        //         top: 190,
+        //         child: Text("你好Flutter"),
+        //       )
+        //     ],
+        //   ),
+        // ),
+        // Row(
+        //   children: [
+        //     Expanded(
+        //       flex: 2,
+        //       child: SizedBox(
+        //         height: 180,
+        //         child: Image.network(
+        //           "https://feng-1257981287.cos.ap-chengdu.myqcloud.com/uPic/z78vVm.jpg",
+        //           fit: BoxFit.cover,
+        //         ),
+        //       ),
+        //     ),
+        //     Expanded(
+        //       flex: 1,
+        //       child: SizedBox(
+        //         height: 180,
+        //         child: Column(
+        //           children: [
+        //             Expanded(
+        //               flex: 1,
+        //               child: SizedBox(
+        //                 width: double.infinity,
+        //                 child: Image.network(
+        //                   "https://feng-1257981287.cos.ap-chengdu.myqcloud.com/uPic/z78vVm.jpg",
+        //                   fit: BoxFit.cover,
+        //                 ),
+        //               ),
+        //             ),
+        //             const SizedBox(
+        //               height: 5,
+        //             ),
+        //             Expanded(
+        //               flex: 2,
+        //               child: SizedBox(
+        //                 width: double.infinity,
+        //                 child: Image.network(
+        //                   "https://feng-1257981287.cos.ap-chengdu.myqcloud.com/uPic/z78vVm.jpg",
+        //                   fit: BoxFit.cover,
+        //                 ),
+        //               ),
+        //             )
+        //           ],
+        //         ),
+        //       ),
+        //     )
+        //   ],
+        // )
       ],
     );
   }
