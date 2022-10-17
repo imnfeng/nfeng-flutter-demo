@@ -11,8 +11,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primarySwatch: Colors.yellow,
-      ),
+          // primarySwatch: Colors.yellow,
+          ),
       home: Scaffold(
         appBar: AppBar(title: const Text("Flutter ICON")),
         body: const LayoutDemo(),
@@ -24,130 +24,164 @@ class MyApp extends StatelessWidget {
 class LayoutDemo extends StatelessWidget {
   const LayoutDemo({super.key});
 
-  List<Widget> _initCardData() {
-    var tempList = listData.map((value) {
-      return Card(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-        elevation: 20,
-        margin: const EdgeInsets.all(10),
-        child: Column(
-          children: [
-            AspectRatio(
-              aspectRatio: 16 / 9,
-              child: Image.network(
-                value["imageUrl"],
-                fit: BoxFit.cover,
-              ),
-            ),
-            ListTile(
-              leading: ClipOval(
-                child: Image.network(
-                  value["imageUrl"],
-                  fit: BoxFit.cover,
-                  height: 40,
-                  width: 40,
-                ),
-              ),
-              title: Text(value["title"]),
-              subtitle: Text(value["author"]),
-            ),
-            // const Divider(),
-            // const ListTile(
-            //   title: Text("电话：15222222"),
-            // ),
-            // const ListTile(
-            //   title: Text("地址：北京市海淀区 xxx"),
-            // )
-          ],
-        ),
-      );
-    });
-    return tempList.toList();
-  }
-
   @override
   Widget build(BuildContext context) {
     return ListView(
-      children: _initCardData(),
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                print("ElevatedButton");
+              },
+              child: const Text("普通按钮"),
+            ),
+            TextButton(onPressed: () {}, child: const Text("文本按钮")),
+            const OutlinedButton(onPressed: null, child: Text("边控的按钮")),
+            IconButton(onPressed: () {}, icon: const Icon(Icons.thumb_up))
+          ],
+        ),
+        const SizedBox(
+          height: 20,
+        ),
+        Row(
+          children: [
+            ElevatedButton.icon(
+              onPressed: () {},
+              icon: const Icon(Icons.send),
+              label: const Text("发送"),
+            ),
+            TextButton.icon(
+              onPressed: () {},
+              icon: const Icon(Icons.info),
+              label: const Text("消息"),
+            ),
+            OutlinedButton.icon(
+              onPressed: () {},
+              icon: const Icon(Icons.add),
+              label: const Text("增加"),
+            )
+          ],
+        ),
+        const SizedBox(
+          height: 20,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            ElevatedButton(
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Colors.red),
+                foregroundColor: MaterialStateProperty.all(Colors.white),
+              ),
+              onPressed: () {
+                print("ElevatedButton");
+              },
+              child: const Text("普通按钮"),
+            )
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            SizedBox(
+              height: 60,
+              width: 200,
+              child: ElevatedButton(
+                onPressed: () {},
+                child: const Text("大按钮"),
+              ),
+            ),
+            SizedBox(
+              height: 60,
+              width: 200,
+              child: ElevatedButton.icon(
+                onPressed: () {},
+                icon: const Icon(Icons.search),
+                label: const Text("搜索"),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+          ],
+        ),
+        Row(
+          children: [
+            Expanded(
+              flex: 1,
+              child: Container(
+                margin: const EdgeInsets.all(20),
+                height: 40,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(
+                          const Color.fromARGB(220, 219, 35, 35)),
+                      foregroundColor: MaterialStateProperty.all(Colors.white)),
+                  child: const Text("登录"),
+                ),
+              ),
+            )
+          ],
+        ),
+        const SizedBox(
+          height: 20,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            ElevatedButton(
+              style: ButtonStyle(
+                shape: MaterialStateProperty.all(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                ),
+              ),
+              onPressed: () {},
+              child: const Text("圆角"),
+            ),
+            SizedBox(
+              height: 80,
+              width: 80,
+              child: ElevatedButton(
+                style: ButtonStyle(
+                  shape: MaterialStateProperty.all(
+                    const CircleBorder(
+                      side: BorderSide(
+                        width: 2,
+                        color: Colors.yellow,
+                      ),
+                    ),
+                  ),
+                ),
+                onPressed: () {},
+                child: const Text("圆形"),
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(
+          height: 20,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            OutlinedButton(
+              style: ButtonStyle(
+                side: MaterialStateProperty.all(
+                  const BorderSide(width: 1, color: Colors.red),
+                ),
+              ),
+              onPressed: () {},
+              child: const Text("带边框的按钮"),
+            )
+          ],
+        )
+      ],
     );
-    // return ListView(
-    //   children: [
-    //     Card(
-    //       shape:
-    //           RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-    //       elevation: 20,
-    //       margin: const EdgeInsets.all(10),
-    //       child: Column(
-    //         children: [
-    //           AspectRatio(
-    //             aspectRatio: 16 / 9,
-    //             child: Image.network(
-    //               "https://feng-1257981287.cos.ap-chengdu.myqcloud.com/uPic/z78vVm.jpg",
-    //               fit: BoxFit.cover,
-    //             ),
-    //           ),
-    //           ListTile(
-    //             leading: ClipOval(
-    //               child: Image.network(
-    //                 "https://feng-1257981287.cos.ap-chengdu.myqcloud.com/uPic/z78vVm.jpg",
-    //                 fit: BoxFit.cover,
-    //                 height: 40,
-    //                 width: 40,
-    //               ),
-    //             ),
-    //             title: const Text(
-    //               "张三",
-    //               style: TextStyle(fontSize: 28),
-    //             ),
-    //             subtitle: const Text("高级软件工程师"),
-    //           ),
-    //           // const Divider(),
-    //           // const ListTile(
-    //           //   title: Text("电话：15222222"),
-    //           // ),
-    //           // const ListTile(
-    //           //   title: Text("地址：北京市海淀区 xxx"),
-    //           // )
-    //         ],
-    //       ),
-    //     ),
-    //     Card(
-    //       shape:
-    //           RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-    //       elevation: 20,
-    //       margin: const EdgeInsets.all(10),
-    //       child: Column(
-    //         children: [
-    //           AspectRatio(
-    //             aspectRatio: 16 / 9,
-    //             child: Image.network(
-    //               "https://feng-1257981287.cos.ap-chengdu.myqcloud.com/uPic/z78vVm.jpg",
-    //               fit: BoxFit.cover,
-    //             ),
-    //           ),
-    //           const ListTile(
-    //             leading: CircleAvatar(
-    //               backgroundImage: NetworkImage(
-    //                   "https://feng-1257981287.cos.ap-chengdu.myqcloud.com/uPic/z78vVm.jpg"),
-    //             ),
-    //             title: Text(
-    //               "李四",
-    //               style: TextStyle(fontSize: 28),
-    //             ),
-    //             subtitle: Text("Flutter高级软件工程师"),
-    //           ),
-    //           // const Divider(),
-    //           // const ListTile(
-    //           //   title: Text("电话：15222222"),
-    //           // ),
-    //           // const ListTile(
-    //           //   title: Text("地址：北京市海淀区 xxx"),
-    //           // )
-    //         ],
-    //       ),
-    //     )
-    //   ],
-    // );
   }
 }
 
