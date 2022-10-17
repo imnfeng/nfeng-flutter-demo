@@ -46,6 +46,7 @@ class LayoutDemo extends StatelessWidget {
           height: 20,
         ),
         Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             ElevatedButton.icon(
               onPressed: () {},
@@ -82,20 +83,22 @@ class LayoutDemo extends StatelessWidget {
             )
           ],
         ),
+        const SizedBox(
+          height: 20,
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             SizedBox(
               height: 60,
-              width: 200,
+              width: 140,
               child: ElevatedButton(
                 onPressed: () {},
                 child: const Text("大按钮"),
               ),
             ),
             SizedBox(
-              height: 60,
-              width: 200,
+              height: 40,
               child: ElevatedButton.icon(
                 onPressed: () {},
                 icon: const Icon(Icons.search),
