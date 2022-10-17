@@ -15,9 +15,139 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(title: const Text("Flutter ICON")),
-        body: const HomePage(),
+        body: const LayoutDemo(),
       ),
     );
+  }
+}
+
+class LayoutDemo extends StatelessWidget {
+  const LayoutDemo({super.key});
+
+  List<Widget> _initCardData() {
+    var tempList = listData.map((value) {
+      return Card(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        elevation: 20,
+        margin: const EdgeInsets.all(10),
+        child: Column(
+          children: [
+            AspectRatio(
+              aspectRatio: 16 / 9,
+              child: Image.network(
+                value["imageUrl"],
+                fit: BoxFit.cover,
+              ),
+            ),
+            ListTile(
+              leading: ClipOval(
+                child: Image.network(
+                  value["imageUrl"],
+                  fit: BoxFit.cover,
+                  height: 40,
+                  width: 40,
+                ),
+              ),
+              title: Text(value["title"]),
+              subtitle: Text(value["author"]),
+            ),
+            // const Divider(),
+            // const ListTile(
+            //   title: Text("电话：15222222"),
+            // ),
+            // const ListTile(
+            //   title: Text("地址：北京市海淀区 xxx"),
+            // )
+          ],
+        ),
+      );
+    });
+    return tempList.toList();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      children: _initCardData(),
+    );
+    // return ListView(
+    //   children: [
+    //     Card(
+    //       shape:
+    //           RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+    //       elevation: 20,
+    //       margin: const EdgeInsets.all(10),
+    //       child: Column(
+    //         children: [
+    //           AspectRatio(
+    //             aspectRatio: 16 / 9,
+    //             child: Image.network(
+    //               "https://feng-1257981287.cos.ap-chengdu.myqcloud.com/uPic/z78vVm.jpg",
+    //               fit: BoxFit.cover,
+    //             ),
+    //           ),
+    //           ListTile(
+    //             leading: ClipOval(
+    //               child: Image.network(
+    //                 "https://feng-1257981287.cos.ap-chengdu.myqcloud.com/uPic/z78vVm.jpg",
+    //                 fit: BoxFit.cover,
+    //                 height: 40,
+    //                 width: 40,
+    //               ),
+    //             ),
+    //             title: const Text(
+    //               "张三",
+    //               style: TextStyle(fontSize: 28),
+    //             ),
+    //             subtitle: const Text("高级软件工程师"),
+    //           ),
+    //           // const Divider(),
+    //           // const ListTile(
+    //           //   title: Text("电话：15222222"),
+    //           // ),
+    //           // const ListTile(
+    //           //   title: Text("地址：北京市海淀区 xxx"),
+    //           // )
+    //         ],
+    //       ),
+    //     ),
+    //     Card(
+    //       shape:
+    //           RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+    //       elevation: 20,
+    //       margin: const EdgeInsets.all(10),
+    //       child: Column(
+    //         children: [
+    //           AspectRatio(
+    //             aspectRatio: 16 / 9,
+    //             child: Image.network(
+    //               "https://feng-1257981287.cos.ap-chengdu.myqcloud.com/uPic/z78vVm.jpg",
+    //               fit: BoxFit.cover,
+    //             ),
+    //           ),
+    //           const ListTile(
+    //             leading: CircleAvatar(
+    //               backgroundImage: NetworkImage(
+    //                   "https://feng-1257981287.cos.ap-chengdu.myqcloud.com/uPic/z78vVm.jpg"),
+    //             ),
+    //             title: Text(
+    //               "李四",
+    //               style: TextStyle(fontSize: 28),
+    //             ),
+    //             subtitle: Text("Flutter高级软件工程师"),
+    //           ),
+    //           // const Divider(),
+    //           // const ListTile(
+    //           //   title: Text("电话：15222222"),
+    //           // ),
+    //           // const ListTile(
+    //           //   title: Text("地址：北京市海淀区 xxx"),
+    //           // )
+    //         ],
+    //       ),
+    //     )
+    //   ],
+    // );
   }
 }
 
