@@ -21,168 +21,90 @@ class MyApp extends StatelessWidget {
   }
 }
 
+class Button extends StatelessWidget {
+  String text;
+  void Function()? onPressed;
+  Button(this.text, {Key? key, required this.onPressed}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(
+          const Color.fromARGB(242, 255, 244, 244),
+        ),
+        foregroundColor: MaterialStateProperty.all(Colors.black45),
+      ),
+      onPressed: () {},
+      child: Text(text),
+    );
+  }
+}
+
 class LayoutDemo extends StatelessWidget {
   const LayoutDemo({super.key});
 
   @override
   Widget build(BuildContext context) {
     return ListView(
+      padding: const EdgeInsets.all(10),
       children: [
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            ElevatedButton(
-              onPressed: () {
-                print("ElevatedButton");
-              },
-              child: const Text("普通按钮"),
-            ),
-            TextButton(onPressed: () {}, child: const Text("文本按钮")),
-            const OutlinedButton(onPressed: null, child: Text("边控的按钮")),
-            IconButton(onPressed: () {}, icon: const Icon(Icons.thumb_up))
-          ],
-        ),
-        const SizedBox(
-          height: 20,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            ElevatedButton.icon(
-              onPressed: () {},
-              icon: const Icon(Icons.send),
-              label: const Text("发送"),
-            ),
-            TextButton.icon(
-              onPressed: () {},
-              icon: const Icon(Icons.info),
-              label: const Text("消息"),
-            ),
-            OutlinedButton.icon(
-              onPressed: () {},
-              icon: const Icon(Icons.add),
-              label: const Text("增加"),
+            Text(
+              "热搜",
+              style: Theme.of(context).textTheme.titleLarge,
             )
           ],
         ),
-        const SizedBox(
-          height: 20,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+        const Divider(),
+        Wrap(
+          spacing: 10,
+          runSpacing: 10,
           children: [
-            ElevatedButton(
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Colors.red),
-                foregroundColor: MaterialStateProperty.all(Colors.white),
-              ),
-              onPressed: () {
-                print("ElevatedButton");
-              },
-              child: const Text("普通按钮"),
+            Button("女装", onPressed: () {}),
+            Button("笔记本", onPressed: () {}),
+            Button("玩具", onPressed: () {}),
+            Button("文学", onPressed: () {}),
+            Button("女装", onPressed: () {}),
+            Button("时尚", onPressed: () {}),
+            Button("男装", onPressed: () {}),
+            Button("xxxx", onPressed: () {}),
+            Button("手机", onPressed: () {}),
+          ],
+        ),
+        const SizedBox(height: 10),
+        Row(
+          children: [
+            Text(
+              "历史记录",
+              style: Theme.of(context).textTheme.titleLarge,
             )
           ],
         ),
-        const SizedBox(
-          height: 20,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            SizedBox(
-              height: 60,
-              width: 140,
-              child: ElevatedButton(
-                onPressed: () {},
-                child: const Text("大按钮"),
-              ),
-            ),
-            SizedBox(
-              height: 40,
-              child: ElevatedButton.icon(
-                onPressed: () {},
-                icon: const Icon(Icons.search),
-                label: const Text("搜索"),
-              ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
+        const Divider(),
+        Column(
+          children: const [
+            ListTile(title: Text("女装")),
+            Divider(),
+            ListTile(title: Text("手机")),
+            Divider(),
+            ListTile(title: Text("电脑")),
+            Divider(),
           ],
         ),
-        Row(
-          children: [
-            Expanded(
-              flex: 1,
-              child: Container(
-                margin: const EdgeInsets.all(20),
-                height: 40,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(
-                          const Color.fromARGB(220, 219, 35, 35)),
-                      foregroundColor: MaterialStateProperty.all(Colors.white)),
-                  child: const Text("登录"),
-                ),
-              ),
-            )
-          ],
-        ),
-        const SizedBox(
-          height: 20,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            ElevatedButton(
-              style: ButtonStyle(
-                shape: MaterialStateProperty.all(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                ),
-              ),
-              onPressed: () {},
-              child: const Text("圆角"),
+        const SizedBox(height: 40),
+        Padding(
+          padding: const EdgeInsets.all(40),
+          child: OutlinedButton.icon(
+            style: ButtonStyle(
+              foregroundColor: MaterialStateProperty.all(Colors.black45),
             ),
-            SizedBox(
-              height: 80,
-              width: 80,
-              child: ElevatedButton(
-                style: ButtonStyle(
-                  shape: MaterialStateProperty.all(
-                    const CircleBorder(
-                      side: BorderSide(
-                        width: 2,
-                        color: Colors.yellow,
-                      ),
-                    ),
-                  ),
-                ),
-                onPressed: () {},
-                child: const Text("圆形"),
-              ),
-            ),
-          ],
+            onPressed: () {},
+            icon: const Icon(Icons.delete),
+            label: const Text("清空历史记录"),
+          ),
         ),
-        const SizedBox(
-          height: 20,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            OutlinedButton(
-              style: ButtonStyle(
-                side: MaterialStateProperty.all(
-                  const BorderSide(width: 1, color: Colors.red),
-                ),
-              ),
-              onPressed: () {},
-              child: const Text("带边框的按钮"),
-            )
-          ],
-        )
       ],
     );
   }
