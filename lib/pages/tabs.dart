@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './tabs/home.dart';
 import './tabs/category.dart';
+import './tabs/message.dart';
 import './tabs/setting.dart';
 import './tabs/user.dart';
 
@@ -16,6 +17,7 @@ class _TabsState extends State<Tabs> {
   final List<Widget> _pages = const [
     HomePage(),
     CategoryPage(),
+    MessagePage(),
     SettingPage(),
     UserPage(),
   ];
@@ -44,6 +46,10 @@ class _TabsState extends State<Tabs> {
             label: "分类",
           ),
           BottomNavigationBarItem(
+            icon: Icon(Icons.message),
+            label: "消息",
+          ),
+          BottomNavigationBarItem(
             icon: Icon(Icons.settings),
             label: "设置",
           ),
@@ -53,6 +59,26 @@ class _TabsState extends State<Tabs> {
           )
         ],
       ),
+      floatingActionButton: Container(
+        height: 60,
+        width: 60,
+        padding: const EdgeInsets.all(5),
+        margin: const EdgeInsets.only(top: 25),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(30),
+        ),
+        child: FloatingActionButton(
+          backgroundColor: _currentIndex == 2 ? Colors.red : Colors.blue,
+          child: const Icon(Icons.add),
+          onPressed: () {
+            setState(() {
+              _currentIndex = 2;
+            });
+          },
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
