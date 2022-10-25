@@ -25,6 +25,57 @@ class _TabsState extends State<Tabs> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Flutter App")),
+      drawer: Drawer(
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: UserAccountsDrawerHeader(
+                    accountName: const Text("Nfeng"),
+                    accountEmail: const Text("308561157@qq.com"),
+                    otherAccountsPictures: [
+                      Image.network(
+                          "https://feng-1257981287.cos.ap-chengdu.myqcloud.com/uPic/Wirf9X.png"),
+                      Image.network(
+                          "https://feng-1257981287.cos.ap-chengdu.myqcloud.com/uPic/Wirf9X.png"),
+                      Image.network(
+                          "https://feng-1257981287.cos.ap-chengdu.myqcloud.com/uPic/Wirf9X.png"),
+                    ],
+                    currentAccountPicture: const CircleAvatar(
+                      backgroundImage: NetworkImage(
+                          "https://feng-1257981287.cos.ap-chengdu.myqcloud.com/uPic/Wirf9X.png"),
+                    ),
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: NetworkImage(
+                            "https://feng-1257981287.cos.ap-chengdu.myqcloud.com/uPic/z78vVm.jpg"),
+                      ),
+                    ),
+                  ),
+                )
+              ],
+            ),
+            const ListTile(
+              leading: CircleAvatar(
+                child: Icon(Icons.people),
+              ),
+              title: Text("个人中心"),
+            ),
+            const Divider(),
+            const ListTile(
+              leading: CircleAvatar(
+                child: Icon(Icons.settings),
+              ),
+              title: Text("系统设置"),
+            ),
+            const Divider(),
+          ],
+        ),
+      ),
+      endDrawer: const Drawer(child: Text("右侧侧边栏")),
       body: _pages[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         fixedColor: Colors.red,
