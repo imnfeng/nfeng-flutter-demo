@@ -12,7 +12,14 @@ class Tabs extends StatefulWidget {
   State<Tabs> createState() => _TabsState();
 }
 
-class _TabsState extends State<Tabs> {
+class _TabsState extends State<Tabs> with SingleTickerProviderStateMixin {
+  late TabController _tabController;
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 9, vsync: this);
+  }
+
   int _currentIndex = 0;
   final List<Widget> _pages = const [
     HomePage(),
@@ -24,7 +31,77 @@ class _TabsState extends State<Tabs> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Flutter App")),
+      appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.menu),
+          onPressed: () {
+            print("左侧按钮图标");
+          },
+        ),
+        backgroundColor: Colors.red,
+        title: const Text("Flutter App"),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.search),
+          ),
+          IconButton(
+            onPressed: () {
+              print("更多");
+            },
+            icon: const Icon(Icons.more_horiz),
+          )
+        ],
+        bottom: TabBar(
+          isScrollable: true,
+          indicatorColor: Colors.white,
+          indicatorWeight: 2,
+          indicatorPadding: const EdgeInsets.all(5),
+          // indicatorSize: TabBarIndicatorSize.label,
+          labelColor: Colors.yellow,
+          unselectedLabelColor: Colors.white,
+          labelStyle: const TextStyle(
+            fontSize: 14,
+          ),
+          unselectedLabelStyle: const TextStyle(
+            fontSize: 12,
+          ),
+          indicator: BoxDecoration(
+            color: Colors.blue,
+            borderRadius: BorderRadius.circular(10),
+          ),
+          controller: _tabController,
+          tabs: const [
+            Tab(
+              child: Text("关注"),
+            ),
+            Tab(
+              child: Text("热门"),
+            ),
+            Tab(
+              child: Text("视频"),
+            ),
+            Tab(
+              child: Text("关注"),
+            ),
+            Tab(
+              child: Text("热门"),
+            ),
+            Tab(
+              child: Text("视频"),
+            ),
+            Tab(
+              child: Text("关注"),
+            ),
+            Tab(
+              child: Text("热门"),
+            ),
+            Tab(
+              child: Text("视频"),
+            ),
+          ],
+        ),
+      ),
       drawer: Drawer(
         child: Column(
           children: [
@@ -76,7 +153,48 @@ class _TabsState extends State<Tabs> {
         ),
       ),
       endDrawer: const Drawer(child: Text("右侧侧边栏")),
-      body: _pages[_currentIndex],
+      // body: _pages[_currentIndex],
+      body: TabBarView(
+        controller: _tabController,
+        children: [
+          const Text("我是关注"),
+          const Text("我是关注"),
+          const Text("我是关注"),
+          const Text("我是关注"),
+          const Text("我是关注"),
+          const Text("我是关注"),
+          const Text("我是关注"),
+          ListView(
+            children: const [
+              ListTile(
+                title: Text("我是热门列表"),
+              ),
+              ListTile(
+                title: Text("我是热门列表"),
+              ),
+              ListTile(
+                title: Text("我是热门列表"),
+              ),
+              ListTile(
+                title: Text("我是热门列表"),
+              ),
+              ListTile(
+                title: Text("我是热门列表"),
+              ),
+              ListTile(
+                title: Text("我是热门列表"),
+              ),
+            ],
+          ),
+          ListView(
+            children: const [
+              ListTile(
+                title: Text("我是视频列表"),
+              )
+            ],
+          )
+        ],
+      ),
       bottomNavigationBar: BottomNavigationBar(
         fixedColor: Colors.red,
         iconSize: 35,
