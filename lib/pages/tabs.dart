@@ -32,12 +32,7 @@ class _TabsState extends State<Tabs> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.menu),
-          onPressed: () {
-            print("左侧按钮图标");
-          },
-        ),
+        elevation: 1,
         backgroundColor: Colors.red,
         title: const Text("Flutter App"),
         actions: [
@@ -52,55 +47,6 @@ class _TabsState extends State<Tabs> with SingleTickerProviderStateMixin {
             icon: const Icon(Icons.more_horiz),
           )
         ],
-        bottom: TabBar(
-          isScrollable: true,
-          indicatorColor: Colors.white,
-          indicatorWeight: 2,
-          indicatorPadding: const EdgeInsets.all(5),
-          // indicatorSize: TabBarIndicatorSize.label,
-          labelColor: Colors.yellow,
-          unselectedLabelColor: Colors.white,
-          labelStyle: const TextStyle(
-            fontSize: 14,
-          ),
-          unselectedLabelStyle: const TextStyle(
-            fontSize: 12,
-          ),
-          indicator: BoxDecoration(
-            color: Colors.blue,
-            borderRadius: BorderRadius.circular(10),
-          ),
-          controller: _tabController,
-          tabs: const [
-            Tab(
-              child: Text("关注"),
-            ),
-            Tab(
-              child: Text("热门"),
-            ),
-            Tab(
-              child: Text("视频"),
-            ),
-            Tab(
-              child: Text("关注"),
-            ),
-            Tab(
-              child: Text("热门"),
-            ),
-            Tab(
-              child: Text("视频"),
-            ),
-            Tab(
-              child: Text("关注"),
-            ),
-            Tab(
-              child: Text("热门"),
-            ),
-            Tab(
-              child: Text("视频"),
-            ),
-          ],
-        ),
       ),
       drawer: Drawer(
         child: Column(
@@ -153,48 +99,7 @@ class _TabsState extends State<Tabs> with SingleTickerProviderStateMixin {
         ),
       ),
       endDrawer: const Drawer(child: Text("右侧侧边栏")),
-      // body: _pages[_currentIndex],
-      body: TabBarView(
-        controller: _tabController,
-        children: [
-          const Text("我是关注"),
-          const Text("我是关注"),
-          const Text("我是关注"),
-          const Text("我是关注"),
-          const Text("我是关注"),
-          const Text("我是关注"),
-          const Text("我是关注"),
-          ListView(
-            children: const [
-              ListTile(
-                title: Text("我是热门列表"),
-              ),
-              ListTile(
-                title: Text("我是热门列表"),
-              ),
-              ListTile(
-                title: Text("我是热门列表"),
-              ),
-              ListTile(
-                title: Text("我是热门列表"),
-              ),
-              ListTile(
-                title: Text("我是热门列表"),
-              ),
-              ListTile(
-                title: Text("我是热门列表"),
-              ),
-            ],
-          ),
-          ListView(
-            children: const [
-              ListTile(
-                title: Text("我是视频列表"),
-              )
-            ],
-          )
-        ],
-      ),
+      body: _pages[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         fixedColor: Colors.red,
         iconSize: 35,
@@ -206,26 +111,11 @@ class _TabsState extends State<Tabs> with SingleTickerProviderStateMixin {
           });
         },
         items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: "首页",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.category),
-            label: "分类",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.message),
-            label: "消息",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: "设置",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.people),
-            label: "用户",
-          )
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "首页"),
+          BottomNavigationBarItem(icon: Icon(Icons.category), label: "分类"),
+          BottomNavigationBarItem(icon: Icon(Icons.message), label: "消息"),
+          BottomNavigationBarItem(icon: Icon(Icons.settings), label: "设置"),
+          BottomNavigationBarItem(icon: Icon(Icons.people), label: "用户")
         ],
       ),
       floatingActionButton: Container(
