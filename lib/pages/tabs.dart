@@ -4,6 +4,8 @@ import './tabs/category.dart';
 import './tabs/message.dart';
 import './tabs/setting.dart';
 import './tabs/user.dart';
+import './search.dart';
+import './form.dart';
 
 class Tabs extends StatefulWidget {
   const Tabs({super.key});
@@ -37,12 +39,22 @@ class _TabsState extends State<Tabs> with SingleTickerProviderStateMixin {
         title: const Text("Flutter App"),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (BuildContext context) {
+                  return const SearchPage();
+                }),
+              );
+            },
             icon: const Icon(Icons.search),
           ),
           IconButton(
             onPressed: () {
-              print("更多");
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (BuildContext context) {
+                  return const FormPage();
+                }),
+              );
             },
             icon: const Icon(Icons.more_horiz),
           )
