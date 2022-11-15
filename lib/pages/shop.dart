@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class FormPage extends StatefulWidget {
+class ShopPage extends StatefulWidget {
   final Map arguments;
-  const FormPage({super.key, required this.arguments});
+  const ShopPage({super.key, required this.arguments});
 
   @override
-  State<FormPage> createState() => _FormPageState();
+  State<ShopPage> createState() => _ShopPageState();
 }
 
-class _FormPageState extends State<FormPage> {
+class _ShopPageState extends State<ShopPage> {
   @override
   void initState() {
     // TODO: implement initState
@@ -20,10 +20,10 @@ class _FormPageState extends State<FormPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("表单"),
+        title: const Text("shop"),
       ),
       body: const Center(
-        child: Text("我是表单页面"),
+        child: Text("shop页面"),
       ),
     );
   }

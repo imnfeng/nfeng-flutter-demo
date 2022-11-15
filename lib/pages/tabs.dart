@@ -52,7 +52,12 @@ class _TabsState extends State<Tabs> with SingleTickerProviderStateMixin {
             onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(builder: (BuildContext context) {
-                  return const FormPage();
+                  return const FormPage(
+                    arguments: {
+                      "title": "我是命名路由传值",
+                      "aid": 20,
+                    },
+                  );
                 }),
               );
             },

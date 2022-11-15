@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class NewsPage extends StatefulWidget {
   final String title;
   final int aid;
-  const NewsPage({super.key, this.title = "新闻", required this.aid});
+  const NewsPage({super.key, this.title = "新闻", this.aid = 3});
 
   @override
   State<NewsPage> createState() => _NewsPageState();
