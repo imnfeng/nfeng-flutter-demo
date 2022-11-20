@@ -8,7 +8,8 @@ import './search.dart';
 import './form.dart';
 
 class Tabs extends StatefulWidget {
-  const Tabs({super.key});
+  final int index;
+  const Tabs({super.key, this.index = 0});
 
   @override
   State<Tabs> createState() => _TabsState();
@@ -16,13 +17,14 @@ class Tabs extends StatefulWidget {
 
 class _TabsState extends State<Tabs> with SingleTickerProviderStateMixin {
   late TabController _tabController;
+  late int _currentIndex;
   @override
   void initState() {
     super.initState();
     _tabController = TabController(length: 9, vsync: this);
+    _currentIndex = widget.index;
   }
 
-  int _currentIndex = 0;
   final List<Widget> _pages = const [
     HomePage(),
     CategoryPage(),
