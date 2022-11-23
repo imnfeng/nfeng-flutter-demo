@@ -1,5 +1,6 @@
 // import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import '../pages/dialog.dart';
 import '../pages/user/registerSecond.dart';
 import '../pages/user/registerThird.dart';
 import '../pages/user/registerFirst.dart';
@@ -14,6 +15,7 @@ Map routes = {
   "/": (context) => const Tabs(),
   "/news": (context) => const NewsPage(),
   "/search": (context) => const SearchPage(),
+  "/dialog": (context) => const DialogPage(),
   "/form": (context, {arguments}) => FormPage(arguments: arguments),
   "/shop": (context, {arguments}) => ShopPage(arguments: arguments),
   "/login": (context) => const Login(),

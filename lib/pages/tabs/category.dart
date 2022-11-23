@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../search.dart';
-import '../form.dart';
 import '../news.dart';
 
 class CategoryPage extends StatefulWidget {
@@ -68,6 +67,13 @@ class _CategoryPageState extends State<CategoryPage> {
           },
           child: const Text("跳转传值"),
         ),
+        const SizedBox(height: 20),
+        ElevatedButton(
+          onPressed: () {
+            Navigator.pushNamed(context, "/dialog");
+          },
+          child: const Text("Dialog演示"),
+        )
       ],
     ));
   }
