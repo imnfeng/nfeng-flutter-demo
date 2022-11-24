@@ -9,7 +9,7 @@ import './form.dart';
 
 class Tabs extends StatefulWidget {
   final int index;
-  const Tabs({super.key, this.index = 0});
+  const Tabs({super.key, this.index = 1});
 
   @override
   State<Tabs> createState() => _TabsState();

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import '../widgit/myDialog.dart';
 
 class DialogPage extends StatefulWidget {
   const DialogPage({super.key});
@@ -133,6 +134,26 @@ class _DialogPageState extends State<DialogPage> {
         fontSize: 16.0);
   }
 
+  void _myDialog() async {
+    var result = await showDialog(
+      barrierDismissible: false,
+      context: context,
+      builder: (context) {
+        return MyDialog(
+          title: "提示!",
+          content: "我是一个内容",
+          onTap: () {
+            print("close");
+            Navigator.of(context).pop("我是自定义dialog关闭的按钮事件");
+          },
+        );
+      },
+    );
+
+    print("-----------");
+    print(result);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -161,6 +182,11 @@ class _DialogPageState extends State<DialogPage> {
           ElevatedButton(
             onPressed: _toast,
             child: const Text("Toast"),
+          ),
+          const SizedBox(height: 20),
+          ElevatedButton(
+            onPressed: _myDialog,
+            child: const Text("自定义dialog"),
           ),
         ],
       )),
