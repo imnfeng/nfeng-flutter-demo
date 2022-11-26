@@ -1,5 +1,12 @@
 // import 'package:flutter/material.dart';
+
+import 'dart:js';
+
 import 'package:flutter/cupertino.dart';
+import '../pages/pageView.dart';
+import '../pages/pageViewBuilder.dart';
+import '../pages/pageViewFullPage.dart';
+import '../pages/pageViewSwiper.dart';
 import '../pages/dialog.dart';
 import '../pages/user/registerSecond.dart';
 import '../pages/user/registerThird.dart';
@@ -16,6 +23,10 @@ Map routes = {
   "/news": (context) => const NewsPage(),
   "/search": (context) => const SearchPage(),
   "/dialog": (context) => const DialogPage(),
+  "/pageView": (context) => const PageViewPage(),
+  "/pageViewBuilder": (context) => const PageViewBuilderPage(),
+  "/pageViewFullPage": (context) => const PageViewFullPage(),
+  "/pageViewSwiper": (context) => const PageViewSwiper(),
   "/form": (context, {arguments}) => FormPage(arguments: arguments),
   "/shop": (context, {arguments}) => ShopPage(arguments: arguments),
   "/login": (context) => const Login(),
