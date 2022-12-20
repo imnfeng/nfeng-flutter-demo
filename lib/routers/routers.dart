@@ -7,6 +7,7 @@ import '../pages/pageView.dart';
 import '../pages/pageViewBuilder.dart';
 import '../pages/pageViewFullPage.dart';
 import '../pages/pageViewSwiper.dart';
+import '../pages/pageViewKeepAlive.dart';
 import '../pages/dialog.dart';
 import '../pages/user/registerSecond.dart';
 import '../pages/user/registerThird.dart';
@@ -27,6 +28,7 @@ Map routes = {
   "/pageViewBuilder": (context) => const PageViewBuilderPage(),
   "/pageViewFullPage": (context) => const PageViewFullPage(),
   "/pageViewSwiper": (context) => const PageViewSwiper(),
+  "/pageViewKeepAlive": (context) => const PageViewKeepAlive(),
   "/form": (context, {arguments}) => FormPage(arguments: arguments),
   "/shop": (context, {arguments}) => ShopPage(arguments: arguments),
   "/login": (context) => const Login(),
