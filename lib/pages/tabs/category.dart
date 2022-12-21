@@ -109,6 +109,13 @@ class _CategoryPageState extends State<CategoryPage> {
           },
           child: const Text("PageViewKeepAlive"),
         ),
+        const SizedBox(height: 20),
+        ElevatedButton(
+          onPressed: () {
+            Navigator.pushNamed(context, "/widgetKey");
+          },
+          child: const Text("WidgetKeyPage"),
+        ),
       ],
     ));
   }

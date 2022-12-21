@@ -8,6 +8,7 @@ import '../pages/pageViewBuilder.dart';
 import '../pages/pageViewFullPage.dart';
 import '../pages/pageViewSwiper.dart';
 import '../pages/pageViewKeepAlive.dart';
+import '../pages/widgetKey.dart';
 import '../pages/dialog.dart';
 import '../pages/user/registerSecond.dart';
 import '../pages/user/registerThird.dart';
@@ -29,6 +30,7 @@ Map routes = {
   "/pageViewFullPage": (context) => const PageViewFullPage(),
   "/pageViewSwiper": (context) => const PageViewSwiper(),
   "/pageViewKeepAlive": (context) => const PageViewKeepAlive(),
+  "/widgetKey": (context) => const WidgetKeyPage(),
   "/form": (context, {arguments}) => FormPage(arguments: arguments),
   "/shop": (context, {arguments}) => ShopPage(arguments: arguments),
   "/login": (context) => const Login(),
