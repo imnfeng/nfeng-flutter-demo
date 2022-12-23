@@ -116,6 +116,13 @@ class _CategoryPageState extends State<CategoryPage> {
           },
           child: const Text("WidgetKeyPage"),
         ),
+        const SizedBox(height: 20),
+        ElevatedButton(
+          onPressed: () {
+            Navigator.pushNamed(context, "/animatedList");
+          },
+          child: const Text("AnimatedListPage"),
+        ),
       ],
     ));
   }
