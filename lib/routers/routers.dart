@@ -9,8 +9,9 @@ import '../pages/pageViewFullPage.dart';
 import '../pages/pageViewSwiper.dart';
 import '../pages/pageViewKeepAlive.dart';
 import '../pages/widgetKey.dart';
-import '../pages/animated.dart';
 import '../pages/animatedList.dart';
+import '../pages/animatedFlag.dart';
+import '../pages/animatedController.dart';
 import '../pages/dialog.dart';
 import '../pages/user/registerSecond.dart';
 import '../pages/user/registerThird.dart';
@@ -33,8 +34,9 @@ Map routes = {
   "/pageViewSwiper": (context) => const PageViewSwiper(),
   "/pageViewKeepAlive": (context) => const PageViewKeepAlive(),
   "/widgetKey": (context) => const WidgetKeyPage(),
-  "/animated": (context) => const AnimatedPage(),
   "/animatedList": (context) => const AnimatedListPage(),
+  "/animatedFlag": (context) => const AnimatedFlagPage(),
+  "/animatedController": (context) => const AnimatedControllerPage(),
   "/form": (context, {arguments}) => FormPage(arguments: arguments),
   "/shop": (context, {arguments}) => ShopPage(arguments: arguments),
   "/login": (context) => const Login(),

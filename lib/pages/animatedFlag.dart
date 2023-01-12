@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class AnimatedPage extends StatefulWidget {
-  const AnimatedPage({super.key});
+class AnimatedFlagPage extends StatefulWidget {
+  const AnimatedFlagPage({super.key});
 
   @override
-  State<AnimatedPage> createState() => _AnimatedPageState();
+  State<AnimatedFlagPage> createState() => _AnimatedFlagPageState();
 }
 
-class _AnimatedPageState extends State<AnimatedPage> {
+class _AnimatedFlagPageState extends State<AnimatedFlagPage> {
   bool flag = true;
 
   @override

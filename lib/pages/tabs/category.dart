@@ -126,9 +126,16 @@ class _CategoryPageState extends State<CategoryPage> {
         const SizedBox(height: 20),
         ElevatedButton(
           onPressed: () {
-            Navigator.pushNamed(context, "/animated");
+            Navigator.pushNamed(context, "/animatedFlag");
           },
-          child: const Text("AnimatedPage"),
+          child: const Text("AnimatedFlagPage"),
+        ),
+        const SizedBox(height: 20),
+        ElevatedButton(
+          onPressed: () {
+            Navigator.pushNamed(context, "/animatedController");
+          },
+          child: const Text("AnimatedControllerPage"),
         ),
       ],
     ));
