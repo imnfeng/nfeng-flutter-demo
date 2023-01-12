@@ -123,6 +123,13 @@ class _CategoryPageState extends State<CategoryPage> {
           },
           child: const Text("AnimatedListPage"),
         ),
+        const SizedBox(height: 20),
+        ElevatedButton(
+          onPressed: () {
+            Navigator.pushNamed(context, "/animated");
+          },
+          child: const Text("AnimatedPage"),
+        ),
       ],
     ));
   }
