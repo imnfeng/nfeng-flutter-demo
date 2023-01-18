@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import '../widgit/swiper.dart';
+import '../../widgit/swiper.dart';
 
 class PageViewSwiper extends StatefulWidget {
   const PageViewSwiper({super.key});

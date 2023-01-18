@@ -1,18 +1,10 @@
 // import 'package:flutter/material.dart';
 
+// import 'dart:js';
+
 import 'dart:js';
 
 import 'package:flutter/cupertino.dart';
-import '../pages/pageView.dart';
-import '../pages/pageViewBuilder.dart';
-import '../pages/pageViewFullPage.dart';
-import '../pages/pageViewSwiper.dart';
-import '../pages/pageViewKeepAlive.dart';
-import '../pages/widgetKey.dart';
-import '../pages/animate/animatedList.dart';
-import '../pages/animate/animatedFlag.dart';
-import '../pages/animate/animatedController.dart';
-import '../pages/animate/animatedBuilder.dart';
 import '../pages/dialog.dart';
 import '../pages/user/registerSecond.dart';
 import '../pages/user/registerThird.dart';
@@ -23,28 +15,42 @@ import '../pages/news.dart';
 import '../pages/search.dart';
 import '../pages/shop.dart';
 import '../pages/tabs.dart';
+import '../pages/view/pageView.dart';
+import '../pages/view/pageViewBuilder.dart';
+import '../pages/view/pageViewFullPage.dart';
+import '../pages/view/pageViewImageList.dart';
+import '../pages/view/pageViewKeepAlive.dart';
+import '../pages/view/pageViewSwiper.dart';
+import '../pages/view/widgetKey.dart';
+import '../pages/animated/animatedList.dart';
+import '../pages/animated/animatedFlag.dart';
+import '../pages/animated/animatedController.dart';
+import '../pages/animated/animatedBuilder.dart';
+import '../pages/animated/hero.dart';
 
 Map routes = {
   "/": (context) => const Tabs(),
   "/news": (context) => const NewsPage(),
   "/search": (context) => const SearchPage(),
   "/dialog": (context) => const DialogPage(),
-  "/pageView": (context) => const PageViewPage(),
-  "/pageViewBuilder": (context) => const PageViewBuilderPage(),
-  "/pageViewFullPage": (context) => const PageViewFullPage(),
-  "/pageViewSwiper": (context) => const PageViewSwiper(),
-  "/pageViewKeepAlive": (context) => const PageViewKeepAlive(),
-  "/widgetKey": (context) => const WidgetKeyPage(),
-  "/animatedList": (context) => const AnimatedListPage(),
-  "/animatedFlag": (context) => const AnimatedFlagPage(),
-  "/animatedController": (context) => const AnimatedControllerPage(),
-  "/animatedBuilder": (context) => const AnimatedBuilderPage(),
   "/form": (context, {arguments}) => FormPage(arguments: arguments),
   "/shop": (context, {arguments}) => ShopPage(arguments: arguments),
   "/login": (context) => const Login(),
   "/registerFirst": (context) => const RegisterFirstPage(),
   "/registerSecond": (context) => const RegisterSecoundPage(),
-  "/registerThird": (context) => const RegisterThirdPage()
+  "/registerThird": (context) => const RegisterThirdPage(),
+  "/pageView": (context) => const PageViewPage(),
+  "/pageViewBuilder": (context) => const PageViewBuilderPage(),
+  "/pageViewFullPage": (context) => const PageViewFullPage(),
+  "/pageViewImageList": (context) => const PageViewImageList(),
+  "/pageViewKeepAlive": (context) => const PageViewKeepAlive(),
+  "/pageViewSwiper": (context) => const PageViewSwiper(),
+  "/widgetKey": (context) => const WidgetKeyPage(),
+  "/animatedList": (context) => const AnimatedListPage(),
+  "/animatedFlag": (context) => const AnimatedFlagPage(),
+  "/animatedController": (context) => const AnimatedControllerPage(),
+  "/animatedBuilder": (context) => const AnimatedBuilderPage(),
+  "/hero": (context, {arguments}) => HeroPage(arguments: arguments),
 };
 
 var onGenerateRoute = (RouteSettings settings) {

@@ -74,48 +74,55 @@ class _CategoryPageState extends State<CategoryPage> {
             },
             child: const Text("Dialog演示"),
           ),
+          // const SizedBox(height: 20),
+          // ElevatedButton(
+          //   onPressed: () {
+          //     Navigator.pushNamed(context, "/pageView");
+          //   },
+          //   child: const Text("PageView演示"),
+          // ),
+          // const SizedBox(height: 20),
+          // ElevatedButton(
+          //   onPressed: () {
+          //     Navigator.pushNamed(context, "/pageViewBuilder");
+          //   },
+          //   child: const Text("PageViewBuilder演示"),
+          // ),
+          // const SizedBox(height: 20),
+          // ElevatedButton(
+          //   onPressed: () {
+          //     Navigator.pushNamed(context, "/pageViewFullPage");
+          //   },
+          //   child: const Text("PageViewFullPage无限加载"),
+          // ),
           const SizedBox(height: 20),
           ElevatedButton(
             onPressed: () {
-              Navigator.pushNamed(context, "/pageView");
+              Navigator.pushNamed(context, "/pageViewImageList");
             },
-            child: const Text("PageView演示"),
+            child: const Text("PageViewImageList图片列表"),
           ),
-          const SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.pushNamed(context, "/pageViewBuilder");
-            },
-            child: const Text("PageViewBuilder演示"),
-          ),
-          const SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.pushNamed(context, "/pageViewFullPage");
-            },
-            child: const Text("PageViewFullPage无限加载"),
-          ),
-          const SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.pushNamed(context, "/pageViewSwiper");
-            },
-            child: const Text("PageViewSwiper"),
-          ),
-          const SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.pushNamed(context, "/pageViewKeepAlive");
-            },
-            child: const Text("PageViewKeepAlive"),
-          ),
-          const SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.pushNamed(context, "/widgetKey");
-            },
-            child: const Text("WidgetKeyPage"),
-          ),
+          // const SizedBox(height: 20),
+          // ElevatedButton(
+          //   onPressed: () {
+          //     Navigator.pushNamed(context, "/pageViewKeepAlive");
+          //   },
+          //   child: const Text("PageViewKeepAlive"),
+          // ),
+          // const SizedBox(height: 20),
+          // ElevatedButton(
+          //   onPressed: () {
+          //     Navigator.pushNamed(context, "/pageViewSwiper");
+          //   },
+          //   child: const Text("PageViewSwiper"),
+          // ),
+          // const SizedBox(height: 20),
+          // ElevatedButton(
+          //   onPressed: () {
+          //     Navigator.pushNamed(context, "/widgetKey");
+          //   },
+          //   child: const Text("WidgetKeyPage"),
+          // ),
           // const SizedBox(height: 20),
           // ElevatedButton(
           //   onPressed: () {
@@ -137,13 +144,13 @@ class _CategoryPageState extends State<CategoryPage> {
           //   },
           //   child: const Text("AnimatedControllerPage"),
           // ),
-          const SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.pushNamed(context, "/animatedBuilder");
-            },
-            child: const Text("AnimatedBuilder"),
-          ),
+          // const SizedBox(height: 20),
+          // ElevatedButton(
+          //   onPressed: () {
+          //     Navigator.pushNamed(context, "/animatedBuilder");
+          //   },
+          //   child: const Text("AnimatedBuilder"),
+          // ),
         ],
       ),
     );
