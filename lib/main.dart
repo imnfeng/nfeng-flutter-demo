@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
             centerTitle: true,
           )),
       home: const Tabs(),
-      initialRoute: "/",
+      initialRoute: "/login",
       onGenerateRoute: onGenerateRoute,
     );
   }

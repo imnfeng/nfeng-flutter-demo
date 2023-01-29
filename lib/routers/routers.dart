@@ -27,6 +27,7 @@ import '../pages/animated/animatedFlag.dart';
 import '../pages/animated/animatedController.dart';
 import '../pages/animated/animatedBuilder.dart';
 import '../pages/animated/hero.dart';
+import '../pages/form/textField.dart';
 
 Map routes = {
   "/": (context) => const Tabs(),
@@ -51,6 +52,7 @@ Map routes = {
   "/animatedController": (context) => const AnimatedControllerPage(),
   "/animatedBuilder": (context) => const AnimatedBuilderPage(),
   "/hero": (context, {arguments}) => HeroPage(arguments: arguments),
+  "/textField": (context) => const TextFieldPage(),
 };
 
 var onGenerateRoute = (RouteSettings settings) {
