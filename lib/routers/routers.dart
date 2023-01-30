@@ -26,6 +26,8 @@ import '../pages/animated/animatedFlag.dart';
 import '../pages/animated/animatedController.dart';
 import '../pages/animated/animatedBuilder.dart';
 import '../pages/animated/hero.dart';
+import '../pages/animated/loading.dart';
+import '../pages/animated/future.dart';
 import '../pages/form/form.dart';
 import '../pages/form/textField.dart';
 import '../pages/form/radio.dart';
@@ -55,6 +57,8 @@ Map routes = {
   "/animatedController": (context) => const AnimatedControllerPage(),
   "/animatedBuilder": (context) => const AnimatedBuilderPage(),
   "/hero": (context, {arguments}) => HeroPage(arguments: arguments),
+  "/loading": (context) => const LoadingPage(),
+  "/future": (context) => const FuturePage(),
   "/form": (context, {arguments}) => FormPage(arguments: arguments),
   "/textfield": (context) => const TextFieldPage(),
   "/radio": (context) => const RadioPage(),
