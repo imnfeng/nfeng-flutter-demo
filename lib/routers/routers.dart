@@ -10,7 +10,6 @@ import '../pages/user/registerSecond.dart';
 import '../pages/user/registerThird.dart';
 import '../pages/user/registerFirst.dart';
 import '../pages/user/login.dart';
-import '../pages/form.dart';
 import '../pages/news.dart';
 import '../pages/search.dart';
 import '../pages/shop.dart';
@@ -27,14 +26,18 @@ import '../pages/animated/animatedFlag.dart';
 import '../pages/animated/animatedController.dart';
 import '../pages/animated/animatedBuilder.dart';
 import '../pages/animated/hero.dart';
+import '../pages/form/form.dart';
 import '../pages/form/textField.dart';
+import '../pages/form/radio.dart';
+import '../pages/form/checkbox.dart';
+import '../pages/form/checkboxListTitle.dart';
+import '../pages/form/switch.dart';
 
 Map routes = {
   "/": (context) => const Tabs(),
   "/news": (context) => const NewsPage(),
   "/search": (context) => const SearchPage(),
   "/dialog": (context) => const DialogPage(),
-  "/form": (context, {arguments}) => FormPage(arguments: arguments),
   "/shop": (context, {arguments}) => ShopPage(arguments: arguments),
   "/login": (context) => const Login(),
   "/registerFirst": (context) => const RegisterFirstPage(),
@@ -52,7 +55,12 @@ Map routes = {
   "/animatedController": (context) => const AnimatedControllerPage(),
   "/animatedBuilder": (context) => const AnimatedBuilderPage(),
   "/hero": (context, {arguments}) => HeroPage(arguments: arguments),
-  "/textField": (context) => const TextFieldPage(),
+  "/form": (context, {arguments}) => FormPage(arguments: arguments),
+  "/textfield": (context) => const TextFieldPage(),
+  "/radio": (context) => const RadioPage(),
+  "/checkbox": (context) => const CheckboxPage(),
+  "/checkboxListTile": (context) => const CheckboxListTilePage(),
+  "/switch": (context) => const SwitchPage(),
 };
 
 var onGenerateRoute = (RouteSettings settings) {

@@ -5,7 +5,7 @@ import './tabs/message.dart';
 import './tabs/setting.dart';
 import './tabs/user.dart';
 import './search.dart';
-import './form.dart';
+import 'form/form.dart';
 
 class Tabs extends StatefulWidget {
   final int index;
