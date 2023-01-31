@@ -9,61 +9,24 @@ class FuturePage extends StatefulWidget {
 
 class _FuturePageState extends State<FuturePage> {
   int _counter = 0;
-  Future<String> getStringNum() {
-    // return Future.value("你好Future");
-
-    // return Future.delayed(const Duration(seconds: 3), () {
-    //   return "你好Future";
-    // });
-
-    // return Future(() {
-    //   return "你好flutter";
-    // });
-
-    return Future(() {
-      return Future.error(Exception("this is error"));
-    });
-  }
 
   Future<int> getNum() {
-    // print("getNum执行");
-    // return Future.delayed(const Duration(seconds: 2), () {
-    //   return 123;
-    // });
-
-    // return Future.error(Exception("this is error"));
     return Future.value(123);
   }
 
+  Future<String> loadData() async {
+    await Future.delayed(const Duration(seconds: 3));
+    return "你好我是远程数据";
+  }
+
   void _incrementCounter() async {
-    // var result = await getNum();
-    var result;
+    int result;
     try {
       result = await getNum();
       print(result);
     } catch (e) {
       print(e);
     }
-    // print(result);
-
-    // print("执行");
-    // getNum().then((value) {
-    //   return value * 2;
-    // }).then((value) {
-    //   print(value);
-    // }).catchError((err) {
-    //   print(err);
-    // }).whenComplete(() {
-    //   print("完成");
-    // });
-    // getStringNum().then((value) {
-    //   print(value);
-    // }).catchError((err) {
-    //   print(err);
-    // }).whenComplete(() {
-    //   print("完成");
-    // });
-    // print("---执行--");
 
     setState(() {
       _counter++;
@@ -82,7 +45,19 @@ class _FuturePageState extends State<FuturePage> {
       appBar: AppBar(
         title: const Text("Future"),
       ),
-      body: const Text("body"),
+      body: Center(
+        child: FutureBuilder(
+          future: loadData(),
+          initialData: "我是初始化的数据",
+          builder: (context, snapshot) {
+            if (snapshot.hasError) {
+              return Text("error: ${snapshot.error}");
+            } else {
+              return Text("Data:${snapshot.data}");
+            }
+          },
+        ),
+      ),
     );
   }
 }
