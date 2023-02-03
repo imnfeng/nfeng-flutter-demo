@@ -29,6 +29,7 @@ import '../pages/animated/hero.dart';
 import '../pages/animated/loading.dart';
 import '../pages/animated/future.dart';
 import '../pages/animated/stream.dart';
+import '../pages/animated/game.dart';
 import '../pages/form/form.dart';
 import '../pages/form/textField.dart';
 import '../pages/form/radio.dart';
@@ -61,6 +62,7 @@ Map routes = {
   "/loading": (context) => const LoadingPage(),
   "/future": (context) => const FuturePage(),
   "/stream": (context) => const StreamPage(),
+  "/game": (context) => const GamePage(),
   "/form": (context, {arguments}) => FormPage(arguments: arguments),
   "/textfield": (context) => const TextFieldPage(),
   "/radio": (context) => const RadioPage(),

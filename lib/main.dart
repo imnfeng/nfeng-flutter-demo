@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       home: const Tabs(),
-      initialRoute: "/stream",
+      initialRoute: "/game",
       onGenerateRoute: onGenerateRoute,
     );
   }
