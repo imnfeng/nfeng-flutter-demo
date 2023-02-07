@@ -36,6 +36,8 @@ import '../pages/form/radio.dart';
 import '../pages/form/checkbox.dart';
 import '../pages/form/checkboxListTitle.dart';
 import '../pages/form/switch.dart';
+import '../pages/form/dateTime.dart';
+import '../pages/form/showDatePicker.dart';
 
 Map routes = {
   "/": (context) => const Tabs(),
@@ -69,6 +71,8 @@ Map routes = {
   "/checkbox": (context) => const CheckboxPage(),
   "/checkboxListTile": (context) => const CheckboxListTilePage(),
   "/switch": (context) => const SwitchPage(),
+  "/dateTime": (context) => const DateTimePage(),
+  "/showDatePicker": (context) => const ShowDateTimePickerPage(),
 };
 
 var onGenerateRoute = (RouteSettings settings) {
