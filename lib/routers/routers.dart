@@ -38,6 +38,11 @@ import '../pages/form/checkboxListTitle.dart';
 import '../pages/form/switch.dart';
 import '../pages/form/dateTime.dart';
 import '../pages/form/showDatePicker.dart';
+import '../pages/dio/dio.dart';
+import '../pages/dio/restful.dart';
+import '../pages/dio/jsonMap.dart';
+import '../pages/dio/dioGetCategory.dart';
+import '../pages/dio/dioAndFutureBuild.dart';
 
 Map routes = {
   "/": (context) => const Tabs(),
@@ -73,6 +78,12 @@ Map routes = {
   "/switch": (context) => const SwitchPage(),
   "/dateTime": (context) => const DateTimePage(),
   "/showDatePicker": (context) => const ShowDateTimePickerPage(),
+  "/dio": (context) => const DioPage(),
+  "/restful": (context) => const RestfulPage(),
+  "/jsonMap": (context) => const JsonMapPage(),
+  "/dioGetCategory": (context) => const DioGetCategoryPage(),
+  "/dioGetCategoryWithFutureBuilder": (context) =>
+      const DioAndFutureBuilderGetCategory(),
 };
 
 var onGenerateRoute = (RouteSettings settings) {
