@@ -2,8 +2,6 @@
 
 // import 'dart:js';
 
-import 'dart:js';
-
 import 'package:flutter/cupertino.dart';
 import '../pages/dialog.dart';
 import '../pages/user/registerSecond.dart';
@@ -43,6 +41,7 @@ import '../pages/dio/restful.dart';
 import '../pages/dio/jsonMap.dart';
 import '../pages/dio/dioGetCategory.dart';
 import '../pages/dio/dioAndFutureBuild.dart';
+import '../pages/dio/dioNews.dart';
 
 Map routes = {
   "/": (context) => const Tabs(),
@@ -84,6 +83,7 @@ Map routes = {
   "/dioGetCategory": (context) => const DioGetCategoryPage(),
   "/dioGetCategoryWithFutureBuilder": (context) =>
       const DioAndFutureBuilderGetCategory(),
+  "/dioNews": (context) => const DioNewsPage(),
 };
 
 var onGenerateRoute = (RouteSettings settings) {

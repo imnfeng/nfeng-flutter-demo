@@ -49,6 +49,13 @@ class _DioPageState extends State<DioPage> {
                 child: const Text("Dio结合FutureBuilder渲染数据"),
               ),
               const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, "/dioNews");
+                },
+                child: const Text("新闻页面 下拉加载 上拉分页"),
+              ),
+              const SizedBox(height: 20),
             ],
           ),
         ),
