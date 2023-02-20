@@ -71,14 +71,28 @@ class _DioNewsPageState extends State<DioNewsPage> {
                     return Column(
                       children: [
                         ListTile(
-                          title: Text("${_list[index]["title"]}"),
+                          title: Text("${_list[index]["title"]}", maxLines: 1),
+                          onTap: () {
+                            Navigator.pushNamed(context, "/newsContent",
+                                arguments: {"aid": _list[index]["aid"]});
+                          },
                         ),
+                        const Divider(),
                         _progressIndicator(),
                       ],
                     );
                   } else {
-                    return ListTile(
-                      title: Text("${_list[index]["title"]}"),
+                    return Column(
+                      children: [
+                        ListTile(
+                          title: Text("${_list[index]["title"]}", maxLines: 1),
+                          onTap: () {
+                            Navigator.pushNamed(context, "/newsContent",
+                                arguments: {"aid": _list[index]["aid"]});
+                          },
+                        ),
+                        const Divider(),
+                      ],
                     );
                   }
                 },
