@@ -1,9 +1,3 @@
-// import 'package:flutter/material.dart';
-
-// import 'dart:js';
-
-import 'dart:js';
-
 import 'package:flutter/cupertino.dart';
 import '../pages/dialog.dart';
 import '../pages/user/registerSecond.dart';
