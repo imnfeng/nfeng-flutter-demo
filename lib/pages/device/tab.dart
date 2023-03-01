@@ -40,6 +40,20 @@ class _TabDevicePageState extends State<TabDevicePage> {
                 child: const Text("urlLauncher"),
               ),
               const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, "/video");
+                },
+                child: const Text("video播放视频"),
+              ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, "/chewieVideo");
+                },
+                child: const Text("chewie播放视频"),
+              ),
+              const SizedBox(height: 20),
             ],
           ),
         ),

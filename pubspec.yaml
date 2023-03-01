@@ -45,6 +45,8 @@ dependencies:
   device_info_plus: ^8.1.0
   connectivity_plus: ^3.0.3
   url_launcher: ^6.1.10
+  video_player: ^2.5.2
+  chewie: ^1.4.0
 
 dev_dependencies:
   flutter_test:

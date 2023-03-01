@@ -1,5 +1,3 @@
-// import 'dart:js';
-
 import 'package:flutter/cupertino.dart';
 import '../pages/dialog.dart';
 import '../pages/user/registerSecond.dart';
@@ -45,6 +43,8 @@ import '../pages/device/tab.dart';
 import '../pages/device/device.dart';
 import '../pages/device/network.dart';
 import '../pages/device/urlLauncher.dart';
+import '../pages/device/video.dart';
+import '../pages/device/chewieVideo.dart';
 
 Map routes = {
   "/": (context) => const Tabs(),
@@ -93,6 +93,8 @@ Map routes = {
   "/device": (context) => const DevicePage(),
   "/network": (context) => const NetworkPage(),
   "/urlLauncher": (context) => const UrlLauncherPage(),
+  "/video": (context) => const VideoPage(),
+  "/chewieVideo": (context) => const ChewieVideo()
 };
 
 var onGenerateRoute = (RouteSettings settings) {
