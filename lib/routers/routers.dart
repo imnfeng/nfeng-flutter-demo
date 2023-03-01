@@ -1,3 +1,5 @@
+// import 'dart:js';
+
 import 'package:flutter/cupertino.dart';
 import '../pages/dialog.dart';
 import '../pages/user/registerSecond.dart';
@@ -39,6 +41,10 @@ import '../pages/dio/dioGetCategory.dart';
 import '../pages/dio/dioAndFutureBuild.dart';
 import '../pages/dio/dioNews.dart';
 import '../pages/dio/dioNewsContent.dart';
+import '../pages/device/tab.dart';
+import '../pages/device/device.dart';
+import '../pages/device/network.dart';
+import '../pages/device/urlLauncher.dart';
 
 Map routes = {
   "/": (context) => const Tabs(),
@@ -83,6 +89,10 @@ Map routes = {
   "/dioNews": (context) => const DioNewsPage(),
   "/newsContent": (context, {arguments}) =>
       NewsContentPage(arguments: arguments),
+  "/tabDevice": (context) => const TabDevicePage(),
+  "/device": (context) => const DevicePage(),
+  "/network": (context) => const NetworkPage(),
+  "/urlLauncher": (context) => const UrlLauncherPage(),
 };
 
 var onGenerateRoute = (RouteSettings settings) {
