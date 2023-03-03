@@ -56,6 +56,13 @@
         <string>alipays</string>
     </array>
     
+    <key>NSPPhotoLibraryUsageDescription</key>
+    <string>应用需要访问相册读取照片</string>
+    <key>NSCameraUsageDescription</key>
+    <string>应用需要访问相机拍照</string>
+    <key>NSMicrophoneUseageDescription</key>
+    <string>应用需要访问麦克风录制视频</string>
+    
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 </dict>

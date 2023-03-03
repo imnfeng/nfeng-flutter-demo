@@ -54,6 +54,20 @@ class _TabDevicePageState extends State<TabDevicePage> {
                 child: const Text("chewie播放视频"),
               ),
               const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, "/imagePicker");
+                },
+                child: const Text("拍照 相册选择图片"),
+              ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, "/videoPicker");
+                },
+                child: const Text("录制视频 相册选择视频"),
+              ),
+              const SizedBox(height: 20),
             ],
           ),
         ),

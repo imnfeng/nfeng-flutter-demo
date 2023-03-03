@@ -45,6 +45,8 @@ import '../pages/device/network.dart';
 import '../pages/device/urlLauncher.dart';
 import '../pages/device/video.dart';
 import '../pages/device/chewieVideo.dart';
+import '../pages/device/videoPicker.dart';
+import '../pages/device/imagePicker.dart';
 
 Map routes = {
   "/": (context) => const Tabs(),
@@ -94,7 +96,9 @@ Map routes = {
   "/network": (context) => const NetworkPage(),
   "/urlLauncher": (context) => const UrlLauncherPage(),
   "/video": (context) => const VideoPage(),
-  "/chewieVideo": (context) => const ChewieVideo()
+  "/chewieVideo": (context) => const ChewieVideo(),
+  "/videoPicker": (context) => const VideoPickerPage(),
+  "/imagePicker": (context) => const ImagePickerPage(),
 };
 
 var onGenerateRoute = (RouteSettings settings) {
