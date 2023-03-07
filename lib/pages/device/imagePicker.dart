@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -21,7 +22,9 @@ class _ImagePickerPageState extends State<ImagePickerPage> {
       maxHeight: 800,
     );
     if (pickedFile != null) {
-      print(pickedFile.path);
+      // print(pickedFile.path);
+      // 上传图片
+      _uploadFile(pickedFile.path);
       setState(() {
         _pickedFile = pickedFile;
       });
@@ -41,6 +44,23 @@ class _ImagePickerPageState extends State<ImagePickerPage> {
         _pickedFile = pickedFile;
       });
     }
+  }
+
+  //上传图片
+  _uploadFile(imageDir) async {
+    final formData = FormData.fromMap({
+      'username': 'zhangsan',
+      'age': 25,
+      'date': DateTime.now().toIso8601String(),
+      'file': await MultipartFile.fromFile(imageDir, filename: 'xxxx.jpg'),
+      'files': [
+        await MultipartFile.fromFile('./text1.txt', filename: 'text1.txt'),
+        await MultipartFile.fromFile('./text2.txt', filename: 'text2.txt'),
+      ]
+    });
+    var response =
+        await Dio().post('https://jd.itying.com/imgupload', data: formData);
+    print(response.data);
   }
 
   @override

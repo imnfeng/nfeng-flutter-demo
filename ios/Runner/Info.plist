@@ -49,19 +49,34 @@
     <key>LSApplicationQueriesSchemes</key>
     <array>
         <string>iosamap</string>
-        
         <string>sms</string>
         <string>tel</string>
         <string>weixin</string>
         <string>alipays</string>
     </array>
     
-    <key>NSPPhotoLibraryUsageDescription</key>
+    <key>NSPhotoLibraryUsageDescription</key>
     <string>应用需要访问相册读取照片</string>
     <key>NSCameraUsageDescription</key>
     <string>应用需要访问相机拍照</string>
-    <key>NSMicrophoneUseageDescription</key>
+    <key>NSMicrophoneUsageDescription</key>
     <string>应用需要访问麦克风录制视频</string>
+    
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSExceptionDomains</key>
+        <dict>
+            <key>phonegap100.com</key>
+            <dict>
+                <key>NSIncludesSubdomains</key>
+                <true/>
+                <key>NSExceptionRequiresForwardSecrecy</key>
+                <false/>
+                <key>NSExceptionAllowsInsecureHTTPLoads</key>
+                <true/>
+            </dict>
+        </dict>
+    </dict>
     
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>

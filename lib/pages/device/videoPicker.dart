@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:video_player/video_player.dart';
@@ -61,11 +64,33 @@ class _VideoPickerPageState extends State<VideoPickerPage> {
       source: ImageSource.gallery,
     );
     if (pickedFile != null) {
-      await _initVideo(pickedFile.path);
+      // 加载视频
+      await _initVideo(File(pickedFile.path));
+      // 上传视频
+      _uploadFile(pickedFile.path);
       setState(() {
         _pickedFile = pickedFile;
       });
     }
+  }
+
+  //上传视频 需要压缩视频
+  _uploadFile(videoDir) async {
+    final formData = FormData.fromMap({
+      'username': 'zhangsan',
+      'age': 25,
+      'date': DateTime.now().toIso8601String(),
+      'file': await MultipartFile.fromFile(videoDir, filename: 'xxxx.mp4'),
+      'files': [
+        await MultipartFile.fromFile('./text1.txt', filename: 'text1.txt'),
+        await MultipartFile.fromFile('./text2.txt', filename: 'text2.txt'),
+      ]
+    });
+    // https://jd.itying.com/public/upload/orXDAXMHW9XsAxMKYZix-Lpu.mp4
+    // https://jd.itying.com/public/upload/_ydOjlsD6o53L3r1GPL_av2z.mp4
+    var response =
+        await Dio().post('https://jd.itying.com/imgupload', data: formData);
+    print(response.data);
   }
 
   @override
