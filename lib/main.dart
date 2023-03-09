@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       home: const Tabs(),
-      initialRoute: "/tabDevice",
+      initialRoute: "/storage",
       onGenerateRoute: onGenerateRoute,
       //配置国际化
       localizationsDelegates: const [
