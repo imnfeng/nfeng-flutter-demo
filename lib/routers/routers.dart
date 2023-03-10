@@ -48,6 +48,7 @@ import '../pages/device/chewieVideo.dart';
 import '../pages/device/videoPicker.dart';
 import '../pages/device/imagePicker.dart';
 import '../pages/storage/storage.dart';
+import '../pages/device/BarcodeScan.dart';
 
 Map routes = {
   "/": (context) => const Tabs(),
@@ -101,6 +102,7 @@ Map routes = {
   "/videoPicker": (context) => const VideoPickerPage(),
   "/imagePicker": (context) => const ImagePickerPage(),
   "/storage": (context) => const StoragePage(),
+  "/barcodeScan": (context) => const BarcodeScanPage(),
 };
 
 var onGenerateRoute = (RouteSettings settings) {

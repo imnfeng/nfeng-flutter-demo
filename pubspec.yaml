@@ -49,6 +49,7 @@ dependencies:
   chewie: ^1.4.0
   image_picker: ^0.8.5+3
   shared_preferences: ^2.0.18
+  barcode_scan2: ^4.2.4
 
 dev_dependencies:
   flutter_test:
